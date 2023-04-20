@@ -18,7 +18,19 @@ class Timer {
   }
 
   tick = () => {
-    console.log('tick') 
+    if(this.timeRemianing <= 0) {
+      this.pause()
+    } else {
+      this.timeRemianing = this.timeRemianing - 1
+    }
+  }
+
+  get timeRemianing() {
+    return parseFloat(this.durationInput.value)
+  }
+
+  set timeRemianing(time) {
+    this.durationInput.value = time
   }
 }
 
